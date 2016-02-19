@@ -2,20 +2,24 @@ $(document).ready(function(){
 
 var thermostat = new Thermostat();
 	displayTemperature();
+	displayColor();
 
 $('.temperature-increase').click(function(){
 	thermostat.increaseTemperature();
 	displayTemperature();
-	});
+	displayColor();
+});
 
 $('.temperature-decrease').click(function(){
 	thermostat.decreaseTemperature();
 	displayTemperature();
+	displayColor();
 });
 
 $('.temperature-reset').click(function(){
 	thermostat.resetTemperature();
 	displayTemperature();
+	displayColor();
 });
 
 $('.toggle-power-saving-mode').click(function(){
@@ -25,24 +29,15 @@ $('.toggle-power-saving-mode').click(function(){
 	else{
 		$('#power-saving-mode').text('off')}
 	displayTemperature();
+	displayColor();
 });
+
+function displayColor(){
+	$('.display-temperature').css('background-color', thermostat.displayTemperature);
+}
 
 function displayTemperature(){
-	$('.temperature').text(thermostat.temperature);}
+	$('.temperature').text(thermostat.temperature);
+}
 });
 
-
-
-// Refactored below to above!
-// var thermostat = new Thermostat();
-// $('.temperature').text(thermostat.temperature);
-
-// $('.temperature-increase').click(function(){
-// 	thermostat.increaseTemperature();
-// 	$('.temperature').text(thermostat.temperature);};
-// 	});
-
-// $('.temperature-decrease').click(function(){
-// 	thermostat.decreaseTemperature();
-// 	$('.temperature').text(thermostat.temperature);};
-// });

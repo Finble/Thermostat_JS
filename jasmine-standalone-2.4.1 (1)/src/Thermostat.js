@@ -17,7 +17,7 @@ Thermostat.prototype.getCurrentTemperature = function(){
 Thermostat.prototype.increaseTemperature = function() {
 	if(this.temperature >= this.maxTemp) {
 		throw new Error('You cannot go above '+ this.maxTemp + ' degrees')};
-  this.temperature ++ ;  // += 1
+  	this.temperature ++ ;  // += 1
  	this.changeDisplayTemperature();
 };
 
@@ -47,9 +47,7 @@ Thermostat.prototype.changeDisplayTemperature = function() {
 	else if(this.temperature < 25) {
 		return this.displayTemperature = "Yellow";
 	}
-
 	this.displayTemperature = "Red";
-
 };
 
 
