@@ -4,6 +4,7 @@ var thermostat = new Thermostat();
 var city;
 	displayTemperature();
 	displayColor();
+    displayWeather('London');
 
 $('.temperature-increase').click(function(){
 	thermostat.increaseTemperature();
@@ -36,19 +37,19 @@ $('.toggle-power-saving-mode').click(function(){
 
 $(".select-city").click(function(){
     city = $(".city-input").val();
-    $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=metric&appid=a3d9eb01d4de82b9b8d0849ef604dbed', function(data) {
-    $("#current-temperature").text(data.main.temp);
-    $("#current-city").text(data.name);
+    displayWeather(city);
+});
+
+
+function displayWeather(city) {
+    var url = 'http://api.openweathermap.org/data/2.5/weather?q=' + city; 
+    var apikey = '&appid=a3d9eb01d4de82b9b8d0849ef604dbed';
+    var units = '&units=metric';
+    $.get(url + apikey + units, function(data){
+        $("#current-temperature").text(data.main.temp);
+        $("#current-city").text(data.name);
     });
-});
-
-$.get('http://api.openweathermap.org/data/2.5/weather?q=London&units=metric&appid=a3d9eb01d4de82b9b8d0849ef604dbed', function(data) {
-    $("#current-temperature").text(data.main.temp);
-    $("#current-city").text(data.name);
-
-});
-
-
+}
 
 function displayColor(){
 	$('.display-temperature').css('background-color', thermostat.displayTemperature);
