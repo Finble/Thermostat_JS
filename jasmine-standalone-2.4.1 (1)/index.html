@@ -1,32 +1,37 @@
-<!DOCTYPE htlm>
+<!DOCTYPE html>
 <html>
 	<head>
+	<link rel="stylesheet" href="styles.css"/>
 	<title>Thermostat</title>
 	</head>
 
 	<body>
-		
+	<main>	
 	<section>
-		<div class ="display-temperature">	
-		<h1 class="temperature"></h1>
-		</div>
-
-		<button class="temperature-increase">+</button>
-		<button class="temperature-decrease">-</button>
-		<button class="temperature-reset">RESET</button>
-		<p>Power saving mode is<span id="power-saving-status"></span></p>
-		<button class="toggle-power-saving-mode">Toggle PSM</button>
-
-        <div class="current-temperature-display">
-            <h1>Current Temperature is: <span id="current-temperature"></span>
+	    <div class="current-temperature-display">
+	      <h1>Current Temperature is: <span id="current-temperature"></span>
                 For: <span id="current-city"></span>
-            </h1>
-        </div>
+	      </h1>
+	    </div>
         <input class="city-input" type='text' placeholder="City Name" />
         <button class="select-city">Select City</button>
+
+	    <div class ="display-temperature">	
+		<h1 class="temperature"></h1>
+	    </div>
+
+	<div class="your-temperature">
+	    <button class="temperature-increase">+</button>
+	    <button class="temperature-decrease">-</button>
+	    <button class="temperature-reset">RESET</button>
+	    <p>Power saving mode is <span id="power-saving-status">on</span></p>
+	    <button class="toggle-power-saving-mode">Toggle PSM</button>
+	</div>
+
 	</section>
 	<script src="src/thermostat.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="src/interface.js"></script>
+    </main>
 	</body>
 </html>
