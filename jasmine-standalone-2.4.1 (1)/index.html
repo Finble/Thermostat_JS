@@ -17,7 +17,16 @@
 		<p>Power saving mode is<span id="power-saving-status"></span></p>
 		<button class="toggle-power-saving-mode">Toggle PSM</button>
 
+        <div class="current-temperature-display">
+            <h1>Current Temperature is: <span id="current-temperature"></span>
+                For: <span id="current-city"></span>
+            </h1>
+        </div>
+        <input class="city-input" type='text' placeholder="City Name" />
+        <button class="select-city">Select City</button>
 	</section>
-	<script src="js/thermostat.js"></script>
+	<script src="src/thermostat.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="src/interface.js"></script>
 	</body>
 </html>
